@@ -1,17 +1,9 @@
-
 "use client";
-
-import React from 'react'
-
-
-
+import React, { use } from 'react'
 import Link from 'next/link'
 import VideoPlayer from "@/components/VideoPlayer";
 import VideosRecomendados from '@/components/VideosRecomendados';
 import Comentarios from '@/components/Comentarios';
-
-import { useRouter } from 'next/router';
-
 
 const mainVideoUrl = "https://www.youtube.com/embed/LB6_e2uA7rE";
 
@@ -48,12 +40,17 @@ const recommendedVideos = [
   },
 ];
 
-const page = () => {
+
+export default function Page({
+  params,
+}) {
+  const id = use(params).id
+  console.log(id)
   return (
     <div className="bg-slate-600 grid grid-cols-2 gap-4">
     {/* Video Player */}
     <div className="p-4">
-      <VideoPlayer className="w-full"  /> 
+      <VideoPlayer videoId={id} className="w-full"  /> 
     </div>
 
     {/* Recommended Videos */}
@@ -63,20 +60,12 @@ const page = () => {
     <Comentarios className="p-4 col-span-1 md:col-span-1"/>
   </div>
   )
-}
 
-export default page
-
-
-
-// import React from 'react'
-
-// const VideoId = () => {
-//   return (
-//     <div>   
-//       <h1>id dinamico</h1>
-//     </div>
-//   )
+  // export default async function Page({params}) {
+//   console.log(id)
+//   return <div>My Post: {id}</div>
 // }
 
-// export default VideoId
+  // const slug = (await params).slug
+  // return <div>My Post: {slug}</div>
+}

@@ -67,7 +67,7 @@ const Video = () => {
         {videos.map((video) => (
           <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
             {/* Link to the video */}
-            <Link href={`/videoplayer`}>
+            <Link href={`/videoplayer/${video.id}`}>
               <img
                 src={video.snippet.thumbnails.medium.url}  // Use the medium thumbnail
                 alt={video.snippet.title}
