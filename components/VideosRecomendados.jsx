@@ -21,7 +21,7 @@ const VideosRecomendados = () => {
               part: 'snippet,contentDetails,statistics',
               chart: 'mostPopular',
               regionCode: REGION_CODE,
-              maxResults: 6,
+              maxResults: 10,
               key: API_KEY,
             }
           }
@@ -59,18 +59,19 @@ const VideosRecomendados = () => {
   }
 
   return (
-    <div className="w-64 bg-primary p-4 rounded-lg shadow-lg border border-white border-opacity-30">
+    <div className="container w-64 bg-primary p-4 rounded-lg shadow-lg border border-white border-opacity-30">
       <h3 className="text-white text-xl font-semibold mb-4">Videos Recomendados</h3>
       <ul className="space-y-4 rounded">
         {videosRecomendados.map((video) => (
           <li key={video.id} className="flex items-center space-x-4 hover:bg-gray-700 p-2 rounded">
-          <Link href={`/videoplayer/${video.id}`}>
+          <Link href={`/videoplayer/${video.id}`} className="flex items-center w-full">
             <img
               src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.title}
-              className="w-16 h-16 object-cover rounded"
-            />
-            <div className="flex flex-col">
+              className="w-16 h-16 object-cover rounded mr-4"
+            /> 
+            
+            <div className="flex flex-col w-full">
               <span className="text-white text-sm">{video.snippet.title}</span>
             </div>
             </Link>

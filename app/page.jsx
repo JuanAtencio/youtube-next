@@ -7,8 +7,10 @@ import Sidebar from "@/components/Sidebar";
 
 export default function Home() {
   return (
-  <div className="bg-slate-600">
-    {/* <Sidebar/> */}
+  <div className="flex bg-slate-600">
+    <div className="">
+        {/* <Sidebar/> */}
+    </div>
     <div className="container">
     <Video/>  
     </div>

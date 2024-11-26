@@ -58,32 +58,32 @@ const Video = () => {
   }
 
   return (
-    <div className="bg-primary flex flex-col items-center mx-auto px-4 py-2">
-      {/* Title of the list */}
-      <h2 className="text-2xl font-semibold text-gray-800 mb-6">Recommended Videos</h2>
-      
-      {/* Grid container */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-        {videos.map((video) => (
-          <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-            {/* Link to the video */}
-            <Link href={`/videoplayer/${video.id}`}>
-              <img
-                src={video.snippet.thumbnails.medium.url}  // Use the medium thumbnail
-                alt={video.snippet.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-medium text-gray-800">{video.snippet.title}</h3>
-                {/* Optional: Description or Date */}
-                <p className="text-sm text-gray-500 truncate">{video.snippet.description}</p>
-                <p className="text-xs text-gray-400 mt-1">{new Date(video.snippet.publishedAt).toLocaleDateString()}</p>
-              </div>
-            </Link>
-          </div>
-        ))}
+      <div className="bg-primary flex flex-col items-center mx-auto px-4 py-2">
+        {/* Title of the list */}
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Recommended Videos</h2>
+        
+        {/* Grid container */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          {videos.map((video) => (
+            <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+              {/* Link to the video */}
+              <Link href={`/videoplayer/${video.id}`}>
+                <img
+                  src={video.snippet.thumbnails.medium.url}  // Use the medium thumbnail
+                  alt={`Thumbnail of ${video.snippet.title}`}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="text-lg font-medium text-gray-800">{video.snippet.title}</h3>
+                  {/* Optional: Description or Date */}
+                  <p className="text-sm text-gray-500 truncate max-w-full">{video.snippet.description}</p>
+                  <p className="text-xs text-gray-400 mt-1">{new Date(video.snippet.publishedAt).toLocaleDateString()}</p>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
   );
 };
 
