@@ -8,13 +8,10 @@ const VideoPlayer = ({ videoId }) => {
 
   }
 
-  // Estado para gestionar la carga del video (opcional)
   const [loading, setLoading] = useState(true);
 
-  // Generar la URL de embed de YouTube usando el videoId
   const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 
-  // Controlar la carga del iframe
   const handleIframeLoad = () => {
     setLoading(false);
   };
@@ -36,8 +33,6 @@ const VideoPlayer = ({ videoId }) => {
           onLoad={handleIframeLoad} // Cambia el estado de loading a false cuando el iframe esté listo
         />
       </div>
-
-      {/* Comentarios */}
       <div className="mt-4 p-4 bg-white">
         <Comentarios />
       </div>

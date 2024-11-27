@@ -3,18 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// import { usePathname } from 'next/navigation';
 
-// const links = [
-//     {
-//         name: "home",
-//         path: "/",
-//     },
-//     {
-//         name:"video",
-//         path:"/videoplayer",
-//     },
-// ]
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);

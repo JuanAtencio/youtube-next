@@ -12,7 +12,7 @@ const VideosRecomendados = () => {
   const REGION_CODE = 'US';
 
   useEffect(() => {
-    // Function to fetch recommended videos
+
     const fetchVideosRecomendados = async () => {
       try {
         const response = await axios.get(
